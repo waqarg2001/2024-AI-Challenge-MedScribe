@@ -1,5 +1,5 @@
 <p align='center'>
-<img src='https://github.com/waqarg2001/Coivid-19-DE-Project/blob/main/Resources/Logo.png' width=630 height=290 >
+<img src='https://github.com/waqarg2001/2024-AI-Challenge-MedScribe/blob/main/assets/medscribe%20logo.png' width=400 height=390 >
 </p>
 
 ---
