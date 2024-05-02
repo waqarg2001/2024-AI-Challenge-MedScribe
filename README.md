@@ -78,7 +78,7 @@ To build this project, the following tools were used:
 The architecture of this project is inspired by the following architecture.
 
 <p align='center'>
-  <img src='https://github.com/waqarg2001/Coivid-19-DE-Project/blob/main/Resources/architecture_diagram.png' height=470 width=600>
+  <img src='' height=470 width=600>
 </p>  
 
 
