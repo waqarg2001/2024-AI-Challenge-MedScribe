@@ -4,7 +4,7 @@
 
 ---
 
-<h4 align='center'> Utilisation of <a href='https://azure.microsoft.com/en-us' target='_blank'>Azure Cloud Services</a> to architect and orchestrate data pipeline(weekly) to perform ETL on Covid-19 dataset of European countries extracted from <a href='https://www.ecdc.europa.eu/en/covid-19/data'>European Centre for Disease Prevention and Control</a> </h4>
+<h4 align='center'> MedScribe is an innovative mobile platform designed to optimize healthcare documentation and reduce physician burnout. Utilizing advanced Generative AI technologies, including the LLM <a href='https://mistral.ai/news/announcing-mistral-7b/'> Mistral 7B </a> and <a href='https://huggingface.co/liuhaotian/llava-v1.5-7b'>LLaVA 1.5 7B</a> models, MedScribe automates the transcription and categorization of doctor-patient interactions into standardized clinical <a href='https://en.wikipedia.org/wiki/SOAP_note'>SOAP notes </a> directly within its app environment.</h4>
 
 <p align='center'>
 <img src="https://i.ibb.co/KxfMMsP/built-with-love.png" alt="built-with-love" border="0">
@@ -23,47 +23,55 @@
 
 ## Overview
 
-<p>The European Centre for Disease Prevention and Control (ECDC) was established in 2005. It is an EU agency aimed at strengthening Europe's defenses against infectious diseases.</p>
+<p>MedScribe is a mobile application that enhances healthcare documentation by automatically transcribing doctor-patient interactions into SOAP notes, which are then stored as part of the patient's history within the app. The app utilizes advanced AI technologies, specifically LLM Mistral 7B and LLaVA 1.5 7B models, to ensure the accuracy and efficiency of data processing. This reduces the time healthcare providers spend on Electronic Health Records (EHRs), helping to alleviate physician burnout and improve patient care. For more details on how MedScribe works and its benefits, please check the project <a href='https://github.com/waqarg2001/2024-AI-Challenge-MedScribe/blob/main/docs/MedScribe%20Report.pdf'> report</a> provided in this repository.</p>
 
-Covid 19 Analysis is a comprehensive project that harnesses the capabilities of Azure services to collect, analyze, and visualize essential COVID-19 data while ensuring robust security through Azure Key Vault and Azure Service Principals. This project seamlessly retrieves data from the European Centre for Disease Prevention and Control (ECDC) and combines it with population data for a comprehensive analysis of the pandemic's impact. Data is ingested into Azure Data Lake Gen2, which acts as a centralized storage repository, and then undergoes transformations and exploratory analysis using Azure Dataflow and Azure Databricks. To maintain stringent security, Azure Key Vault is employed to securely manage and store sensitive credentials and secrets. Processed data is stored in an Azure SQL Database for efficient querying, and Azure Data Lake Gen2 is used for intermediate and refined datasets. The project includes the use of Power Bi for showcasing the spread and testing of Covid 19 in European countries.
+
 
 The repository directory structure is as follows:
 
 ```
 ├── README.md          <- The top-level README for developers using this project. 
 | 
-├── Data             <- Contains data extracted, processed, and used throughout the project.
-│   ├── Raw          <- Contains raw data folders
-│   │
-│   ├── Processed    <- Contains processed data acquired through databricks spark notebooks and azre data flow.
-│   │
-│   ├── Lookup       <- Contains look up files used for population and country info.
-│   │
-│   ├── Config       <- Contains file used to automate the extraction part for ADF.
+├── assets             <- Contains assets used to build this readme.md.
 │
-│
-├── Databricks Notebooks         <- Scripts to aggregate and transform data
-│   ├── configuration           <- Contains configurations used for mounting ADLS and azure key vault.
-│   │
-│   ├── transformation          <- Contains transformation notebooks 
+├── data               <- Data used during the testing of application/notebooks.
+│   ├── CAR0001.mp3           <- Doctor-Patient conversation recording used in notebooks
 |         
-├── Resources                  <- Resources for readme file.
+├── demo                  <- Contains demo video of the application
+│
+│
+├── docs                           <- Contains documentation related to the application.
+│   ├── MedScribe Report.pdf       <- Project report according to competition guidelines
+│
+│
+├── src                       <- Project report according to competition guidelines
+│   ├── notebooks             <- Jupter notebooks which contain llm trainings and speech to text(diarization).
+│       ├── Image_Analysis_LLM.ipynb      <- Llava model training
+│       │
+│       ├── Mistral_Fine_Tuning.ipynb     <- Mistral 7b model finetuning
+│       │ 
+│       ├── SOAP_Inference.ipynb     <- Mistral model inference (SOAP notes)
+│       │
+│       ├── WhisperX - Speech Diarization.ipynb     <- Speech to text and diarization of conversation
+│
+├──
+
 ```
 
 ## Tools 
 
 To build this project, the following tools were used:
 
-- Azure Databricks
-- Azure KeyVault
-- Azure Active Directory
-- Azure DataLake Gen 2
-- Azure Data Factory
-- Azure SQL Database
-- Power Bi
-- Pyspark
-- SQL
-- Git
+- Flutter
+- Python
+- Node JS
+- Flask
+- PostgreSQL
+- AWS Sagemaker
+- Google Cloud Functions
+- Google Bucket
+- Google Kubernetes Engine
+- GPU
 
 ## Architecture
 
