@@ -15,7 +15,7 @@
 <p align="center">
   <a href="#overview">Overview</a> •
   <a href="#tools">Tools</a> •
-  <a href="#architecture">Architecture</a> •
+  <a href="#setup-guide">Setup Guide</a> •
   <a href="#support">Support</a> •
   <a href="#license">License</a>
 </p>
@@ -73,19 +73,28 @@ To build this project, the following tools were used:
 - Google Kubernetes Engine
 - GPU
 
-## Architecture
+## Setup Guide 
 
-The architecture of this project is inspired by the following architecture.
 
-<p align='center'>
-  <img src='' height=470 width=600>
-</p>  
+To set up and test the MedScribe mobile application, follow these steps:
+
+- <b>Download and Install the APK</b>:
+The MedScribe application is distributed as an APK file. You can download the APK from the repository and install it on your Android device. Make sure you have allowed installations from unknown sources in your device's settings.
+
+- <b>Test the Application</b>:
+Once the app is installed, you can launch it and begin testing its features. Since all the models and databases are hosted online, the app should work seamlessly, allowing you to explore its functionalities, such as transcribing doctor-patient interactions into SOAP notes and analyzing diagnostic reports.
+
+- <b>Explore the Notebooks</b>:
+If you want to understand how the AI models were trained and fine-tuned, you can review the Jupyter notebooks provided in the src/notebooks directory. These notebooks cover the training and fine-tuning processes for the different models used in MedScribe.
+To run these notebooks, you can use Google Colab or any environment that provides GPU support. These notebooks require a GPU instance for efficient processing.
+
+By following this setup guide, you should be able to test and explore the MedScribe application, as well as delve into the underlying AI models that power its features.
 
 
 
 ## Support
 
-If you have any doubts, queries, or suggestions then, please connect with me on any of the following platforms:
+If you have any doubts, queries, or suggestions then, please connect with us on any of the following platforms:
 
 [![Linkedin Badge][linkedinbadge]][linkedin] 
 [![Gmail Badge][gmailbadge]][gmail]
