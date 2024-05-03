@@ -1,5 +1,5 @@
 <p align='center'>
-<img src='https://github.com/waqarg2001/2024-AI-Challenge-MedScribe/blob/main/assets/medscribe%20logo.png' width=300 height=300 >
+<img src='https://github.com/waqarg2001/2024-AI-Challenge-MedScribe/blob/main/assets/medscribe%20logo.png' width=250 height=250 >
 </p>
 
 ---
@@ -16,7 +16,6 @@
   <a href="#overview">Overview</a> •
   <a href="#tools">Tools</a> •
   <a href="#setup-guide">Setup Guide</a> •
-  <a href="#support">Support</a> •
   <a href="#license">License</a>
 </p>
 
@@ -92,12 +91,6 @@ By following this setup guide, you should be able to test and explore the MedScr
 
 
 
-## Support
-
-If you have any doubts, queries, or suggestions then, please connect with us on any of the following platforms:
-
-[![Linkedin Badge][linkedinbadge]][linkedin] 
-[![Gmail Badge][gmailbadge]][gmail]
 
 
 ## License
@@ -110,10 +103,3 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 
 
 
-<!--Profile Link-->
-<!--[linkedin]: https://www.linkedin.com/in/waqargul
-[gmail]: mailto:waqargul6@gmail.com-->
-
-<!--Logo Link -->
-<!--[linkedinbadge]: https://img.shields.io/badge/waqargul-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[gmailbadge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white-->
