@@ -4,7 +4,7 @@
 
 ---
 
-<h4 align='center'> MedScribe is an innovative mobile platform designed to optimize healthcare documentation and reduce physician burnout. Utilizing advanced Generative AI technologies, including the LLM <a href='https://mistral.ai/news/announcing-mistral-7b/'> Mistral 7B </a> and <a href='https://huggingface.co/liuhaotian/llava-v1.5-7b'>LLaVA 1.5 7B</a> models, MedScribe automates the transcription and categorization of doctor-patient interactions into standardized clinical <a href='https://en.wikipedia.org/wiki/SOAP_note'>SOAP notes </a> directly within its app environment.</h4>
+<h4 align='center'> MedScribe is mobile platform designed to optimize healthcare documentation and reduce physician burnout. Utilizing Gen AI technologies, including the LLMs <a href='https://mistral.ai/news/announcing-mistral-7b/'> Mistral 7B </a> and <a href='https://huggingface.co/liuhaotian/llava-v1.5-7b'>LLaVA 1.5 7B</a> models, it automates the transcription and categorization of doctor-patient interactions into standardized clinical <a href='https://en.wikipedia.org/wiki/SOAP_note'>SOAP notes </a> directly within its app environment.</h4>
 
 <p align='center'>
 <img src="https://i.ibb.co/KxfMMsP/built-with-love.png" alt="built-with-love" border="0">
@@ -102,9 +102,9 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 
 
 <!--Profile Link-->
-[linkedin]: https://www.linkedin.com/in/waqargul
-[gmail]: mailto:waqargul6@gmail.com
+<!--[linkedin]: https://www.linkedin.com/in/waqargul
+[gmail]: mailto:waqargul6@gmail.com-->
 
 <!--Logo Link -->
-[linkedinbadge]: https://img.shields.io/badge/waqargul-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[gmailbadge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+<!--[linkedinbadge]: https://img.shields.io/badge/waqargul-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[gmailbadge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white-->
