@@ -37,7 +37,7 @@ The repository directory structure is as follows:
 │   ├── CAR0001.mp3           <- Doctor-Patient conversation recording used in notebooks
 |         
 ├── demo                  <- Contains demo video of the application
-│
+│   ├── medscribe-demo-video.mp4           <- Mobile Application with AI feature walkthrough
 │
 ├── docs                           <- Contains documentation related to the application.
 │   ├── MedScribe Report.pdf       <- Project report according to competition guidelines
@@ -52,7 +52,8 @@ The repository directory structure is as follows:
 │       ├── SOAP_Inference.ipynb     <- Mistral model inference (SOAP notes)
 │       │
 │       ├── WhisperX - Speech Diarization.ipynb     <- Speech to text and diarization of conversation
-│
+|
+│   ├── mobile_app     <- Contains flutter code for the application.
 ├──
 
 ```
