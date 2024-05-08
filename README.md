@@ -48,15 +48,16 @@ The repository directory structure is as follows:
 │
 ├── src                       <- Project report according to competition guidelines
 │   ├── notebooks             <- Jupyter notebooks which contain llm trainings and speech to text(diarization).
-│       ├── Image_Analysis_LLM.ipynb      <- Llava model training
-│       │
-│       ├── Mistral_Fine_Tuning.ipynb     <- Mistral 7b model finetuning
-│       │ 
-│       ├── SOAP_Inference.ipynb     <- Mistral model inference (SOAP notes)
-│       │
-│       ├── WhisperX - Speech Diarization.ipynb     <- Speech to text and diarization of conversation
-|
+│   │    ├── Image_Analysis_LLM.ipynb      <- Llava model training
+│   │    │
+│   │    ├── Mistral_Fine_Tuning.ipynb     <- Mistral 7b model finetuning
+│   │    │ 
+│   │    ├── SOAP_Inference.ipynb     <- Mistral model inference (SOAP notes)
+│   │    │
+│   │    ├── WhisperX - Speech Diarization.ipynb     <- Speech to text and diarization of conversation
+|   │
 │   ├── mobile_app     <- Contains flutter code for the application.
+│
 ├──
 
 ```
