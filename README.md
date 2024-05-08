@@ -37,14 +37,17 @@ The repository directory structure is as follows:
 │   ├── CAR0001.mp3           <- Doctor-Patient conversation recording used in notebooks
 |         
 ├── demo                  <- Contains demo video of the application
-│   ├── medscribe-demo-video.mp4           <- Mobile Application with AI feature walkthrough
+│   ├── medscribe-demo-video.mp4           <- Mobile application with AI feature walkthrough
+│   │
+│   ├── base.apk           <- APK file of mobile application
+│
 │
 ├── docs                           <- Contains documentation related to the application.
 │   ├── MedScribe Report.pdf       <- Project report according to competition guidelines
 │
 │
 ├── src                       <- Project report according to competition guidelines
-│   ├── notebooks             <- Jupter notebooks which contain llm trainings and speech to text(diarization).
+│   ├── notebooks             <- Jupyter notebooks which contain llm trainings and speech to text(diarization).
 │       ├── Image_Analysis_LLM.ipynb      <- Llava model training
 │       │
 │       ├── Mistral_Fine_Tuning.ipynb     <- Mistral 7b model finetuning
