@@ -73,6 +73,7 @@ dependencies:
   dio: ^5.4.3+1
   lottie: ^3.1.0
   record: ^4.4.4
+  provider: ^6.1.2
   
 
 dev_dependencies:

@@ -209,7 +209,7 @@ class _RecordConversationState extends State<RecordConversation>
       });
       dio.Dio dioClient = dio.Dio();
       final response = await dioClient.post(
-        "${MedScribeBackenAPI().baseURL}/clinicalNotes",
+        "${MedScribeBackenAPI().baseURL}/clinicalNotes/$patientCode",
         data: formData,
       );
       var jsonResponse = response.data;
@@ -286,7 +286,7 @@ class _RecordConversationState extends State<RecordConversation>
       });
       dio.Dio dioClient = dio.Dio();
       final response = await dioClient.post(
-        "${MedScribeBackenAPI().baseURL}/imageAnalysis",
+        "${MedScribeBackenAPI().baseURL}/imageAnalysis/$patientCode",
         data: formData,
       );
       var jsonResponse = response.data;

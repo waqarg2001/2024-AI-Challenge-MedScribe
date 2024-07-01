@@ -19,6 +19,7 @@ class OTPScreen extends StatefulWidget {
 class _OTPScreenState extends State<OTPScreen> {
   String? phoneNum = Get.parameters['phoneNum'];
   String? deviceToken = Get.parameters['deviceToken'];
+  String? Token;
 
   String? accType = Get.parameters['accType'];
   String? profileCode;
@@ -66,6 +67,7 @@ class _OTPScreenState extends State<OTPScreen> {
         prefs.setString('authToken', authToken!);
         setState(() {
           profileCode = responseJson['response']['profile_code'];
+          Token = authToken;
         });
         print("Profile Code: $profileCode");
       } else {
@@ -99,6 +101,7 @@ class _OTPScreenState extends State<OTPScreen> {
           accType == 'Patient' ? '/patient_main_screen' : '/doctor_main_screen',
           parameters: {
             'profileCode': profileCode!,
+            'authToken': Token!,
           });
     } else {
       setState(() {
@@ -163,7 +166,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                 color: Color(0xFF595959),
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500),
-                            text: "A 4 digit code has been sent to \n",
+                            text: "A 6 digit code has been sent to \n",
                             children: [
                           TextSpan(
                               text: "$phoneNum",

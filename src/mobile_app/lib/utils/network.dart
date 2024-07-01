@@ -5,7 +5,8 @@ class MedScribeBackenAPI {
   String? baseURL;
 
   MedScribeBackenAPI() {
-    baseURL = 'http://34.92.82.192/api/$VERSION';
-    // baseURL = 'https://94b4-39-51-53-49.ngrok-free.app/api/$VERSION';
+    baseURL = 'https://medscribe-container-app.proudgrass-a7a7df48.eastus.azurecontainerapps.io/api/$VERSION';
+    // baseURL = 'https://4764-39-51-57-9.ngrok-free.app/api/$VERSION';
+    
   }
 }

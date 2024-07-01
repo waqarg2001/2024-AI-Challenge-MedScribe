@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,8 +16,6 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PatientMainScreen extends StatefulWidget {
-  PatientMainScreen({Key? key}) : super(key: key);
-
   @override
   PatientMainScreenState createState() => PatientMainScreenState();
 }
@@ -26,10 +25,11 @@ class PatientMainScreenState extends State<PatientMainScreen>
   PageController _pageController = PageController();
   late AnimationController _animationController;
   late AnimationController _animationController2;
+  late Future<dynamic> profileDetailsFuture;
 
   String? patientCode = Get.parameters['profileCode'];
-
-  String? authToken;
+  String? authToken = Get.parameters['authToken'];
+  int initialPage = int.parse(Get.parameters['initialPage'] ?? '0');
 
   bool health_history = false,
       profile = true,
@@ -42,9 +42,13 @@ class PatientMainScreenState extends State<PatientMainScreen>
   @override
   void initState() {
     super.initState();
-    getTokens();
+    // getTokens().then((_) {
+    //   profileDetailsFuture = profileDetailsFetch();
+    // });
+    profileDetailsFuture = profileDetailsFetch();
+    setPage(initialPage);
 
-    _pageController = PageController(initialPage: 1);
+    _pageController = PageController(initialPage: initialPage);
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
@@ -55,11 +59,53 @@ class PatientMainScreenState extends State<PatientMainScreen>
     );
   }
 
-  void getTokens() async {
-    var prefs = await SharedPreferences.getInstance();
-    setState(() {
-      authToken = prefs.getString('authToken');
-    });
+  Future<dynamic> profileDetailsFetch() async {
+    var response = await http.get(
+      Uri.parse('${MedScribeBackenAPI().baseURL}/patient/$patientCode'),
+      headers: {
+        'authorization': 'token $authToken',
+      },
+    );
+    return response;
+  }
+
+  // Future<void> getTokens() async {
+  //   var prefs = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     authToken = prefs.getString('authToken');
+  //   });
+  // }
+
+  void setPage(initialPage) {
+    if (initialPage == 0) {
+      setState(() {
+        health_history = true;
+        profile = false;
+        support = false;
+        setting = false;
+      });
+    } else if (initialPage == 1) {
+      setState(() {
+        health_history = false;
+        profile = true;
+        support = false;
+        setting = false;
+      });
+    } else if (initialPage == 2) {
+      setState(() {
+        health_history = false;
+        profile = false;
+        support = true;
+        setting = false;
+      });
+    } else if (initialPage == 3) {
+      setState(() {
+        health_history = false;
+        profile = false;
+        support = false;
+        setting = true;
+      });
+    }
   }
 
   @override
@@ -109,16 +155,6 @@ class PatientMainScreenState extends State<PatientMainScreen>
     return true;
   }
 
-  Future<dynamic> profileDetailsFetch() async {
-    var response = await http.get(
-      Uri.parse('${MedScribeBackenAPI().baseURL}/patient/$patientCode'),
-      headers: {
-        'authorization': 'token $authToken',
-      },
-    );
-    return response;
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -139,7 +175,7 @@ class PatientMainScreenState extends State<PatientMainScreen>
           children: [
             Column(children: [
               FutureBuilder(
-                  future: profileDetailsFetch(),
+                  future: profileDetailsFuture,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
                       if (snapshot.hasData) {
@@ -173,8 +209,8 @@ class PatientMainScreenState extends State<PatientMainScreen>
                   physics: NeverScrollableScrollPhysics(),
                   children: [
                     HealthHistoryScreen(
-                      patientCode: patientCode!,
-                      authToken: authToken!,
+                      patientCode: patientCode ?? "",
+                      authToken: authToken ?? "",
                     ),
                     FutureBuilder(
                         future: profileDetailsFetch(),

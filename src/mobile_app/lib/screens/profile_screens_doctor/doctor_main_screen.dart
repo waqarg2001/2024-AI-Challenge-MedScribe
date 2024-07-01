@@ -29,10 +29,12 @@ class _DoctorMainScreenState extends State<DoctorMainScreen>
   PageController _pageController = PageController();
   late AnimationController _animationController;
   late AnimationController _aboutusanimationController;
+  late Future<dynamic> profileDetails;
+  late Future<dynamic> patientProfileDetails;
 
   String? doctorCode = Get.parameters['profileCode'];
 
-  String? authToken;
+  String? authToken = Get.parameters['authToken'];
 
   bool access_record = true,
       profile = false,
@@ -91,7 +93,9 @@ class _DoctorMainScreenState extends State<DoctorMainScreen>
   void initState() {
     // TODO: implement initState
     super.initState();
-    getTokens();
+    profileDetails = profileDetailsFetch();
+    patientProfileDetails = patientprofileDetailsFetch();
+    // getTokens();
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
@@ -177,7 +181,7 @@ class _DoctorMainScreenState extends State<DoctorMainScreen>
               // Title Widget Doctor
               !patientData
                   ? FutureBuilder(
-                      future: profileDetailsFetch(),
+                      future: profileDetails,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {
@@ -211,33 +215,38 @@ class _DoctorMainScreenState extends State<DoctorMainScreen>
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {
                             var responseJson = snapshot.data;
-                            String visitDateStr = responseJson['visitHistory']
-                                ['result'][0]['visit_date'];
-                            DateTime visitDate = DateTime.parse(visitDateStr);
+                            String visitDateStr = '';
+                            String formattedVisitDate = '';
+                            if (responseJson['visitHistory']['result']
+                                .isNotEmpty) {
+                              visitDateStr = responseJson['visitHistory']
+                                  ['result'][0]['visit_date'];
+                              DateTime visitDate = DateTime.parse(visitDateStr);
 
-                            String dayWithSuffix(int day) {
-                              if (!(day >= 1 && day <= 31)) {
-                                throw Exception('Invalid day of month');
-                              }
+                              String dayWithSuffix(int day) {
+                                if (!(day >= 1 && day <= 31)) {
+                                  throw Exception('Invalid day of month');
+                                }
 
-                              if (day >= 11 && day <= 13) {
-                                return '${day}th';
-                              }
-
-                              switch (day % 10) {
-                                case 1:
-                                  return '${day}st';
-                                case 2:
-                                  return '${day}nd';
-                                case 3:
-                                  return '${day}rd';
-                                default:
+                                if (day >= 11 && day <= 13) {
                                   return '${day}th';
-                              }
-                            }
+                                }
 
-                            String formattedVisitDate =
-                                '${dayWithSuffix(visitDate.day)} ${DateFormat('MMMM yyyy').format(visitDate)}';
+                                switch (day % 10) {
+                                  case 1:
+                                    return '${day}st';
+                                  case 2:
+                                    return '${day}nd';
+                                  case 3:
+                                    return '${day}rd';
+                                  default:
+                                    return '${day}th';
+                                }
+                              }
+
+                              formattedVisitDate =
+                                  '${dayWithSuffix(visitDate.day)} ${DateFormat('MMMM yyyy').format(visitDate)}';
+                            }
                             DateTime birthDate = DateTime.parse(
                                 responseJson['patientData']['result'][0]
                                     ['birth_date']);
@@ -289,7 +298,7 @@ class _DoctorMainScreenState extends State<DoctorMainScreen>
                             authToken: authToken!,
                           ),
                     FutureBuilder(
-                        future: profileDetailsFetch(),
+                        future: profileDetails,
                         builder: (context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.done) {

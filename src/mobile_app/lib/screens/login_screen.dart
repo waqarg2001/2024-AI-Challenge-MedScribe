@@ -24,8 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   bool authentication = false;
   String _key = "";
   String _platformVersion = 'Unknown';
-  String fingerprintIcon = "assets/finger.png";
-  Color _fingerprintcolor = Colors.black;
+  String fingerprintIcon = "assets/faceid_icon.jpg";
+  Color _fingerprintcolor = Colors.white;
   String? deviceToken;
 
   final _biometricFingerprintPlugin = BiometricFingerprint();
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         authentication = true;
         _key = key;
-        fingerprintIcon = "assets/finger.png";
+        fingerprintIcon = "assets/faceid_icon.jpg";
         _fingerprintcolor = Colors.black;
       });
       Get.snackbar(
@@ -245,7 +245,7 @@ class _LoginPageState extends State<LoginPage> {
                                         0.07,
                                     child: Image.asset(
                                       fingerprintIcon,
-                                      color: _fingerprintcolor,
+
                                     ),
                                   ),
                                 ),
