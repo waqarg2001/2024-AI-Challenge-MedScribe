@@ -88,6 +88,10 @@ The MedScribe application is distributed as an APK file. You can download the AP
 - <b>Test the Application</b>:
 Once the app is installed, you can launch it and begin testing its features. Since all the models and databases are hosted online, the app should work seamlessly, allowing you to explore its functionalities, such as transcribing doctor-patient interactions into SOAP notes and analyzing diagnostic reports.
 
+- <b>Streamline Testing</b>
+For Doctor Profile use the following phone number +923333333338 and add p023 as the patient code.
+For Patient Profile use the following phone number +923333333339.
+
 - <b>Explore the Notebooks</b>:
 If you want to understand how the AI models were trained and fine-tuned, you can review the Jupyter notebooks provided in the src/notebooks directory. These notebooks cover the training and fine-tuning processes for the different models used in MedScribe.
 To run these notebooks, you can use Google Colab or any environment that provides GPU support. These notebooks require a GPU instance for efficient processing.
